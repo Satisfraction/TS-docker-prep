@@ -36,5 +36,5 @@ Dockerized Python backend und mongoDB.
 
 ## Lizenz
 
-Dieses Projekt ist unter der [MIT-Lizenz](https://opensource.org/licenses/MIT) lizenziert.
+Dieses Projekt ist unter der [MIT License](LICENSE) lizenziert.
 
