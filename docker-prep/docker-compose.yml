@@ -17,5 +17,5 @@ services:
     ports:
       - 3000:3000               # Definiert die Ports des Containers
     environment:        
-      - MONGO_URL=mongodb://mongodb:27017/      # Definiert die Umgebungsvariable MONGO_URL mit dem Verbindungsstring zur MongoDB
-      - DATABASE_NAME=sammlung              # Definiert die Umgebungsvariable DATABASE_NAME mit dem Namen der Datenbank
+      - MONGO_URL=mongodb://mongoDB-Name:27017/      # Definiert die Umgebungsvariable MONGO_URL mit dem Verbindungsstring zur MongoDB
+      - DATABASE_NAME=Datenbank-Name              # Definiert die Umgebungsvariable DATABASE_NAME mit dem Namen der Datenbank
