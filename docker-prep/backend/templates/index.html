@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rudimentäres Frontend XD</title>
+
+  <!-- Styledefinitionen -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: #73a079;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      background-color: #5cada3;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    li span {
+      margin-right: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Überschrift -->
+  <h1>Willkommen auf meiner Python gehosteten Website :D</h1>
+
+  <!-- Überschrift für Medailleninformationen -->
+  <h2>Medallien Informationen:</h2>
+
+  <!-- Ungeordnete Liste für die Informationen -->
+  <ul id="informationen"></ul>
+
+  <!-- JavaScript-Code -->
+  <script>
+    // Daten vom Server abrufen
+    fetch('/informationen')
+      .then(response => response.json())
+      .then(data => {
+        // Liste-Elemente erstellen und hinzufügen
+        const ul = document.getElementById('informationen');
+        data.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = `Name: ${item.name}, Bronze: ${item.bronze}, Silber: ${item.silber}, Gold: ${item.gold}, Gesamt: ${item.gesamt}`;
+          ul.appendChild(li);
+        });
+      })
+      .catch(error => console.error(error));
+  </script>
+
+</body>
+
+</html>
